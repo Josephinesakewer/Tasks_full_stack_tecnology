@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Личный кабинет — редактирование профиля пользователя</title>
+  <meta name="description" content="Страница личного кабинета: редактирование профиля пользователя — имя, email, аватар и смена пароля.">
+  <meta name="keywords" content="личный кабинет, профиль пользователя, редактирование профиля, настройки аккаунта">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://example.com/profile/edit">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Личный кабинет — редактирование профиля">
+  <meta property="og:description" content="Измените личные данные, контакты и пароль в личном кабинете.">
+  <meta property="og:url" content="https://example.com/profile/edit">
+  <meta property="og:image" content="https://example.com/img/logo.png">
+  <meta property="og:locale" content="ru_RU">
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="timing.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a class="header__logo-link" href="/" aria-label="На главную">
+      <img class="header__logo"
+           src="logo.png"
+           alt="Логотип компании"
+           width="120"
+           height="120">
+    </a>
+    <div class="header__title-block">
+      <h1 class="header__title">Личный кабинет</h1>
+      <p class="header__subtitle">Управление профилем и настройками аккаунта</p>
+    </div>
+  </header>
+
+  <nav class="menu" aria-label="Основная навигация">
+    <ul class="menu__list">
+      <li class="menu__item"><a class="menu__link" href="/">Главная</a></li>
+      <li class="menu__item"><a class="menu__link" href="/profile">Профиль</a></li>
+      <li class="menu__item"><a class="menu__link" href="/settings">Настройки</a></li>
+      <li class="menu__item"><a class="menu__link" href="/help">Помощь</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <h2 class="content__title">Редактирование профиля</h2>
+
+    <form class="profile-form"
+      action="#"
+      method="post"
+      enctype="multipart/form-data">
+
+      <fieldset class="profile-form__fieldset">
+        <legend class="profile-form__legend">Личные данные</legend>
+
+        <p class="profile-form__row">
+          <label class="profile-form__label" for="username">Имя пользователя *</label>
+          <input class="profile-form__input"
+                 type="text"
+                 id="username"
+                 name="username"
+                 required
+                 minlength="3"
+                 maxlength="50"
+                 autocomplete="username"
+                 placeholder="Например: ivan_petrov">
+        </p>
+
+        <p class="profile-form__row">
+          <label class="profile-form__label" for="fullname">ФИО</label>
+          <input class="profile-form__input"
+                 type="text"
+                 id="fullname"
+                 name="fullname"
+                 maxlength="100"
+                 autocomplete="name"
+                 placeholder="Иванов Иван Иванович">
+        </p>
+
+        <p class="profile-form__row">
+          <label class="profile-form__label" for="email">Email *</label>
+          <input class="profile-form__input"
+                 type="email"
+                 id="email"
+                 name="email"
+                 required
+                 autocomplete="email"
+                 placeholder="user@example.com">
+        </p>
+
+        <p class="profile-form__row">
+          <label class="profile-form__label" for="birthdate">Дата рождения</label>
+          <input class="profile-form__input"
+                 type="date"
+                 id="birthdate"
+                 name="birthdate"
+                 autocomplete="bday">
+        </p>
+      </fieldset>
+
+      <fieldset class="profile-form__fieldset">
+        <legend class="profile-form__legend">Аватар</legend>
+
+        <p class="profile-form__row">
+          <label class="profile-form__label" for="avatar">Загрузить изображение</label>
+          <input class="profile-form__file"
+                 type="file"
+                 id="avatar"
+                 name="avatar"
+                 accept="image/png, image/jpeg, image/webp">
+        </p>
+      </fieldset>
+
+      <fieldset class="profile-form__fieldset">
+        <legend class="profile-form__legend">Смена пароля</legend>
+
+        <p class="profile-form__row">
+          <label class="profile-form__label" for="current-password">Текущий пароль</label>
+          <input class="profile-form__input"
+                 type="password"
+                 id="current-password"
+                 name="current_password"
+                 autocomplete="current-password"
+                 minlength="6">
+        </p>
+
+        <p class="profile-form__row">
+          <label class="profile-form__label" for="new-password">Новый пароль</label>
+          <input class="profile-form__input"
+                 type="password"
+                 id="new-password"
+                 name="new_password"
+                 autocomplete="new-password"
+                 minlength="6">
+        </p>
+
+        <p class="profile-form__row">
+          <label class="profile-form__label" for="confirm-password">Повторите новый пароль</label>
+          <input class="profile-form__input"
+                 type="password"
+                 id="confirm-password"
+                 name="confirm_password"
+                 autocomplete="new-password"
+                 minlength="6">
+        </p>
+      </fieldset>
+
+      <fieldset class="profile-form__fieldset">
+        <legend class="profile-form__legend">Подписка на рассылку</legend>
+
+        <p class="profile-form__row profile-form__row--checkbox">
+          <input class="profile-form__checkbox"
+                 type="checkbox"
+                 id="newsletter"
+                 name="newsletter"
+                 value="1"
+                 checked>
+          <label class="profile-form__label profile-form__label--checkbox" for="newsletter">
+            Получать новости и уведомления на email
+          </label>
+        </p>
+      </fieldset>
+
+      <p class="profile-form__actions">
+        <button class="profile-form__button profile-form__button--primary" type="submit">
+          Сохранить изменения
+        </button>
+        <button class="profile-form__button profile-form__button--reset" type="reset">
+          Сбросить
+        </button>
+      </p>
+    </form>
+  </main>
+  <!-- 4. Правая колонка -->
+  <aside class="sidebar" aria-label="Дополнительная информация">
+    <h2 class="sidebar__title">Метрики загрузки</h2>
+    <p class="sidebar__hint">Значения рассчитываются через Navigation Timing API.</p>
+
+    <ul class="timing" id="timing-output" aria-live="polite"></ul>
+
+    <p class="timing__summary" id="timing-summary">Измерение выполняется…</p>
+  </aside>
+  
+  <footer class="footer">
+    <p class="footer__text">© 2026 Компания. Все права защищены.</p>
+  </footer>
+</body>
+</html>

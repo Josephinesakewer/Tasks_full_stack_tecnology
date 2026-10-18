@@ -1,0 +1,337 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  line-height: 1.5;
+}
+
+.header {
+  width: 100%;
+  height: 150px;
+  background: #d9edf7;
+  border: 1px solid #333;
+  padding: 10px;
+  overflow: hidden; 
+}
+
+.header__logo-link {
+  float: left;
+  display: block;
+  margin-right: 15px;
+}
+
+.header__logo {
+  display: block;
+  width: 120px;
+  height: 120px;
+}
+
+.header__title-block {
+  float: left;
+  padding-top: 20px;
+}
+
+.header__title {
+  margin: 0 0 5px;
+  font-size: 24px;
+}
+
+.header__subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.menu {
+  width: 100%;
+  background: #fcf8e3;
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+.menu__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu__item {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu__link {
+  color: #0645ad;
+  text-decoration: none;
+}
+
+.menu__link:hover,
+.menu__link:focus {
+  text-decoration: underline;
+}
+
+.content {
+  float: left;
+  width: 80%;
+  min-height: 400px;
+  background: #dff0d8;
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+.content__title {
+  margin-top: 0;
+}
+
+.sidebar {
+  float: right;
+  width: 20%;
+  min-width: 200px;
+  min-height: 300px;
+  background: #f2dede;
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+.sidebar__title {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.sidebar__hint {
+  font-size: 12px;
+  color: #555;
+  margin: 0 0 10px;
+}
+
+.footer {
+  clear: both;
+  width: 100%;
+  height: 100px;
+  background: #e4e4e4;
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+.footer__text {
+  margin: 0;
+}
+
+.profile-form {
+  margin: 0;
+}
+
+.profile-form__fieldset {
+  border: 1px solid #999;
+  padding: 10px 15px;
+  margin: 0 0 15px;
+  background: #f7fff2;
+}
+
+.profile-form__legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.profile-form__row {
+  margin: 0 0 10px;
+}
+
+.profile-form__label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.profile-form__input,
+.profile-form__file {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+.profile-form__row--checkbox {
+  overflow: hidden;
+}
+
+.profile-form__checkbox {
+  float: left;
+  margin: 3px 8px 0 0;
+}
+
+.profile-form__label--checkbox {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  font-weight: normal;
+}
+
+.profile-form__actions {
+  margin: 15px 0 0;
+}
+
+.profile-form__button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 1px solid #333;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.profile-form__button--primary {
+  background: #337ab7;
+  color: #fff;
+}
+
+.profile-form__button--primary:hover {
+  background: #286090;
+}
+
+.profile-form__button--reset {
+  background: #eee;
+  color: #333;
+}
+
+.profile-form__button--reset:hover {
+  background: #ddd;
+}
+
+.timing {
+  margin: 0 0 10px;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+.timing__item {
+  padding: 4px 0;
+  border-bottom: 1px dashed #c99;
+}
+
+.timing__label {
+  color: #444;
+}
+
+.timing__value {
+  font-weight: bold;
+  color: #8b0000;
+}
+
+.timing__note {
+  color: #777;
+  font-size: 11px;
+}
+
+.timing__summary {
+  margin: 10px 0 0;
+  font-weight: bold;
+  font-size: 13px;
+  color: #333;
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    width: calc(100% - 200px);
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+}
+
+/* Телефоны: колонки друг под другом */
+@media screen and (max-width: 767px) {
+  .header {
+    height: auto;
+    min-height: 150px;
+  }
+
+  .header__logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .header__title {
+    font-size: 18px;
+  }
+
+  .header__title-block {
+    padding-top: 8px;
+  }
+
+  .content,
+  .sidebar {
+    float: none;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .content {
+    min-height: 400px;
+  }
+
+  .sidebar {
+    min-height: 300px;
+  }
+
+  .footer {
+    min-height: 100px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .profile-form__input,
+  .profile-form__file {
+    font-size: 16px; /* против авто-зума на iOS */
+  }
+
+  .profile-form__button {
+    display: block;
+    width: 100%;
+    margin: 0 0 8px;
+  }
+}
+
+@media print {
+  .header,
+  .menu,
+  .sidebar,
+  .footer {
+    display: none !important;
+  }
+
+  .content {
+    float: none;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .content__title {
+    margin-top: 0;
+  }
+
+  .profile-form__fieldset {
+    background: transparent;
+  }
+
+  .profile-form__button {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+  }
+}
