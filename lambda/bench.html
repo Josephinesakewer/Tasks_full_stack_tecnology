@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Бенчмарк: 4 варианта сайта Lambda (десктоп/адаптив × CSS/less.js)</title>
+<style>
+  body{font:14px/1.45 Arial,sans-serif;margin:20px;background:#f5f5f5;color:#222}
+  section{background:#fff;border:1px solid #ccc;border-radius:4px;padding:15px;margin-bottom:15px}
+  button{padding:8px 16px;margin:0 8px 8px 0;cursor:pointer} button:disabled{opacity:.5}
+  table{border-collapse:collapse;width:100%;margin-top:10px}
+  th,td{border:1px solid #999;padding:6px 10px;font-size:13px;text-align:right} th{background:#eef2ff} td:first-child,th:first-child{text-align:left}
+  .small{font-size:12px;color:#666} label{margin-right:16px}
+</style>
+</head>
+<body>
+<section>
+  <h2>Управление</h2>
+  <button id="run">Запустить замер</button>
+  <button id="csv" disabled>Скачать CSV</button>
+  <label>Прогонов: <input id="runs" type="number" value="20" min="3" max="100" style="width:60px"></label>
+  <label>Ширина окна, px: <input id="width" type="number" value="1440" min="320" max="3000" style="width:70px"></label>
+  <span id="status" class="small"></span>
+  <p class="small">Открывать через HTTP-сервер из папки <code>dist/</code>:
+    <code>python -m http.server 8000 --directory dist</code> → <code>http://localhost:8000/bench.html</code>;
+    <code>node build.mjs</code> кладёт bench.html и bench.js в <code>dist/</code> сам.
+    Каждый вариант грузится в скрытом iframe с cache-buster; <b>не переключайте вкладку</b> во время замера
+    (requestAnimationFrame в фоне не вызывается). localStorage less.js чистится самой страницей.</p>
+</section>
+<section>
+  <h2>Результаты (медиана, мс от начала навигации)</h2>
+  <table id="t"><thead><tr>
+    <th>Вариант</th><th>n</th><th>DOMContentLoaded</th><th>load</th>
+    <th>Отрисовка (стилизованная)</th><th>Компиляция less, мс</th>
+  </tr></thead><tbody></tbody></table>
+  <pre id="conclusion" class="small"></pre>
+</section>
+<div id="frames"></div>
+<script src="bench.js"></script>
+</body>
+</html>
